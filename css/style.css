@@ -1,3 +1,86 @@
+.loading{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;  
+  height: 100%;
+  z-index: 9999;
+  background-color: #333;
+  display: grid;
+  place-content: center;
+}
+.loader {
+  position: relative;
+  border: 24px solid;
+  border-color: #fff  transparent #fff transparent;
+  animation : rotate 2s linear infinite;
+}
+.loader:before,
+.loader:after {
+  content:"";
+  display: block;
+  border: 24px solid transparent;
+  border-left-color: #fff;
+  position: absolute;
+  left: -24px;
+  top: -24px;
+  animation: mvx 1s infinite linear;
+}
+.loader:before {
+  border-color: transparent #fff transparent transparent;
+  animation-name:mvrx;
+  animation-delay: 0.5s;
+}
+@keyframes rotate {
+  100% {transform: rotate(360deg)}
+}
+@keyframes mvx {
+  20% , 80% {transform: translateX(0)}
+  50% {transform: translateX(-50%)}
+}
+@keyframes mvrx {
+  20% , 80% {transform: translateX(0)}
+  50% {transform: translateX(50%)}
+}
+aside{
+  position: fixed;
+  top: 30%;
+  left: 0;
+  z-index: 99;
+  display: flex;
+  align-items: flex-start;
+  white-space: nowrap;
+}
+.sidebar-box{
+  background-color: #ccc;
+  padding: 10px;
+}
+aside i {
+  background-color: #ff206e;
+  padding: 10px;
+  cursor: pointer;
+}
+aside .color-box{
+  display: inline-block;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+aside .color-box:nth-child(1){
+  background-color: tomato;
+}
+aside .color-box:nth-child(2){
+  background-color: #09c;
+}
+aside .color-box:nth-child(3){
+  background-color: seagreen;
+}
+aside .color-box:nth-child(4){
+  background-color: #ff206e;
+}
+.outerside{
+  display: none;
+}
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -11,11 +94,13 @@
 }
 :root {
   --main-color: #1c1c1c;
+  scroll-behavior: auto;
 }
 body {
   font-family: "Poppins", sans-serif;
   color: #343434;
   font-weight: 400;
+  overflow: hidden;
 }
 .section-padding {
   padding: 100px 0;
@@ -141,15 +226,7 @@ a:focus {
 .navbar-nav li a:hover {
   color: #fff !important;
 }
-.navbar-nav li .active:after {
-  content: " ";
-  width: 80%;
-  height: 1px;
-  background-color: #fff;
-  position: absolute;
-  bottom: 0;
-  left: 7px;
-}
+
 .navbar-nav li:after {
   content: "";
   width: 0%;

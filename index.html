@@ -19,11 +19,30 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body data-bs-spy="scroll" data-bs-target="#mynav">
+    <div class="loading">
+      <span class="loader"></span>
+    </div>
+    <aside>
+      <div class="outerside">
+        <div class="sidebar-box">
+          <h2 class="h5">Select Color</h2>
+          <hr>
+          <div class="colors">
+            <span class="color-box"></span>
+            <span class="color-box"></span>
+            <span class="color-box"></span>
+            <span class="color-box"></span>
+          </div>
+        </div>
+      </div>
+
+      <i class="fa-solid fa-gear"></i>
+    </aside>
     <!-- ============================================header============================================ -->
     <header class="header">
       <div class="layer">
         <section id="mynav" class="bg-dark fixed-top">
-          <div class="container">
+          <div>
             <nav class="navbar navbar-expand-lg navbar-dark">
               <div class="container">
                 <a class="logo" href="index.html">DANIELS</a>
@@ -38,7 +57,6 @@
                 >
                   <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <div class="collapse navbar-collapse" id="navbarSupportContent">
                   <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -1019,6 +1037,8 @@
         <p>Copy Right 2018 © By Daniels All Rights Reserved</p>
       </div>
     </footer>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/index.js"></script>
     <script>
       var typed = new Typed("#element", {
         strings: [
